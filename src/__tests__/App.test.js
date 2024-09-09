@@ -11,17 +11,17 @@ beforeEach(() => {
 
 test('should include "Now" in the header instead of a time', () => {
   render(<App />);
-  expect(screen.getByText("Now")).toBeInTheDocuments();
+  expect(screen.getAllByText("Now")).toBeInTheDocuments();
 });
 
 test("should include the <ExampleComponent />", () => {
   render(<App />);
-  expect(screen.getByText("In React apps, we write JSX")).toBeInTheDocument();
+  expect(screen.getByText("In React apps, we write JSX/i")).toBeInTheDocument();
 });
 
 test("should include the <TestComponent />", () => {
   render(<App />);
-  expect(screen.queryByTitle("This is the TestComponent")).toBeInTheDocument();
+  expect(screen.getByTitle("This is the TestComponent")).toBeInTheDocument();
 });
 
 //   it('should include "Now" in the header instead of a time', () => {
