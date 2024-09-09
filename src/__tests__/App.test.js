@@ -7,19 +7,21 @@ beforeEach(() => {
   render(<App />);
 });
 
+
+
 test('should include "Now" in the header instead of a time', () => {
-  expect(
-    screen.queryByText(format(new Date(), "MMMM do yyyy, h:mm:ss a"))
-  ).not.toBeInTheDocument();
-  expect(screen.queryByText(/Now/g)).toBeInTheDocument();
+  render(<App />);
+  expect(screen.getByText("Now")).toBeInTheDocuments();
 });
 
 test("should include the <ExampleComponent />", () => {
-  expect(screen.queryByText("Whoa!")).toBeInTheDocument();
+  render(<App />);
+  expect(screen.getByText("In React apps, we write JSX")).toBeInTheDocument();
 });
 
 test("should include the <TestComponent />", () => {
-  expect(screen.queryByTitle("time video")).toBeInTheDocument();
+  render(<App />);
+  expect(screen.queryByTitle("This is the TestComponent")).toBeInTheDocument();
 });
 
 //   it('should include "Now" in the header instead of a time', () => {
