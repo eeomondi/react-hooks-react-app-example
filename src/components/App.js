@@ -1,5 +1,4 @@
 import React from "react";
-import { format } from "date-fns";
 import ExampleComponent from "./ExampleComponent";
 import TestComponent from "./TestComponent";
 
